@@ -1,0 +1,33 @@
+$gl-prefix: gl !default;
+
+$xs: 424px;
+$phone-min: 425px;
+$phone-max: 767px;
+$tablet-min: 768px;
+$tablet-max: 1023px;
+$laptop-min: 1024px;
+$laptop-max: 1439px;
+$xl: 1400px;
+
+$media-phone: screen and (min-width: $phone-min) and (max-width: $phone-max);
+$media-phone: screen and (max-width: $phone-max);
+$media-mobile: screen and (max-width: $tablet-max);
+$media-desktop: screen and (min-width: $laptop-min);
+
+$base-gap: 10px !default;
+
+
+// gaps
+$gl-gap-s: 0.5rem !default;
+$gl-gap-m: 1rem !default;
+$gl-gap-l: 1.5rem !default;
+
+// gaps on small viewports
+$gl-gap-sm-s: ($gl-gap-s / 2) !default;
+$gl-gap-sm-m: ($gl-gap-m / 2) !default;
+$gl-gap-sm-l: ($gl-gap-l / 2) !default;
+
+// gaps on large viewports
+$gl-gap-lg-s: ($gl-gap-s * 2) !default;
+$gl-gap-lg-m: ($gl-gap-m * 2) !default;
+$gl-gap-lg-l: ($gl-gap-l * 2) !default;
