@@ -1,0 +1,70 @@
+
+
+@mixin grid-classes($mq: false) {
+  $prefix: $gl-prefix;
+  @if $mq {
+    $prefix: $gl-prefix + '-' + $mq;
+  }
+
+  .#{$prefix}-col-full {
+    grid-column: 1 / -1 !important;
+  }
+
+  .#{$prefix}-row-full {
+    grid-row: 1 / -1 !important;
+  }
+  
+  @for $i from 1 through $cell-count {
+    .#{$prefix}-template-#{$i} {
+      grid-template: repeat($i, 1fr) / repeat($i, 1fr) !important;
+    }
+    
+    .#{$prefix}-template-cols-#{$i} {
+      grid-template-columns: repeat($i, 1fr) !important;
+    }
+    
+    .#{$prefix}-template-rows-#{$i} {
+      grid-template-rows: repeat($i, 1fr) !important;
+    }
+    
+    .#{$prefix}-col-#{$i} {
+      grid-column: span $i !important;
+    }
+    
+    .#{$prefix}-row-#{$i} {
+      grid-row: span $i !important;
+    }
+    
+    .#{$prefix}-col-pos-#{$i} {
+      grid-column: $i !important;
+    }
+    
+    .#{$prefix}-col-start-#{$i} {
+      grid-column-start: $i !important;
+    }
+    
+    .#{$prefix}-col-end-#{$i} {
+      grid-column-end: $i !important;
+    }
+    
+    .#{$prefix}-row-pos-#{$i} {
+      grid-row: $i !important;
+    }
+    
+    .#{$prefix}-row-start-#{$i} {
+      grid-row-start: $i !important;
+    }
+    
+    .#{$prefix}-row-end-#{$i} {
+      grid-row-end: $i !important;
+    }
+    
+    .#{$prefix}-col-gap-#{$i} {
+      grid-column-gap: $i * $base-gap !important;
+    }
+    
+    .#{$prefix}-row-gap-#{$i} {
+      grid-row-gap: $i * $base-gap !important;
+    }
+  }
+}

@@ -1,49 +1,13 @@
-.#{$gl-prefix} {
-  
-  @for $i from 1 through 12 {
-    &-template-#{$i} {
-      grid-template: repeat($i, 1fr) / repeat($i, 1fr);
-    }
+@include grid-classes();
 
-    &-template-cols-#{$i} {
-      grid-template-columns: repeat($i, 1fr);
-    }
+@media #{$media-phone} {
+  @include grid-classes('phone');
+}
 
-    &-template-rows-#{$i} {
-      grid-template-rows: repeat($i, 1fr);
-    }
+@media #{$media-mobile} {
+  @include grid-classes('mobile');
+}
 
-    &-col-#{$i} {
-      grid-column: span $i;
-    }
-
-    &-row-#{$i} {
-      grid-row: span $i;
-    }
-
-    &-col-start-#{$i} {
-      grid-column-start: $i;
-    }
-
-    &-col-end-#{$i} {
-      grid-column-end: $i;
-    }
-
-    &-row-start-#{$i} {
-      grid-row-start: $i;
-    }
-    
-    &-row-end-#{$i} {
-      grid-row-end: $i;
-    }
-
-    &-col-gap-#{$i} {
-      grid-column-gap: $i * $base-gap;
-    }
-
-    &-row-gap-#{$i} {
-      grid-row-gap: $i * $base-gap;
-    }
-  }
-
+@media #{$media-desktop} {
+  @include grid-classes('desktop');
 }

@@ -20,11 +20,12 @@
   "author": "David Peris Martinez (davidperis92)",
   "license": "MIT",
   "devDependencies": {
+    "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",
-    "gulp-sass": "^4.0.2",
     "gulp-notify": "^3.2.0",
-    "del": "^3.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
     "run-sequence": "^2.2.1"
   }
 }

@@ -5,6 +5,7 @@ var
   sass = require('gulp-sass'),
   runSequence = require('run-sequence'),
   notify = require('gulp-notify'),
+  rename = require('gulp-rename'),
   del = require('del');
 
 var
@@ -28,6 +29,7 @@ gulp.task('sass-min', function () {
     .pipe(autoprefixer({
       browsers: ['last 3 version', 'ie >= 10']
     }))
+    .pipe(rename('grid-layout.min.css'))
     .pipe(gulp.dest(dist_dir));
 }).help = 'Compiles, minifies and autoprefixes sass desktop source files.';
 
@@ -47,14 +49,14 @@ gulp.task('sass', function () {
 
 
 gulp.task('watch', function () {
-  gulp.watch(src_sass, ['sass']);
+  gulp.watch(src_sass, ['sass', 'sass-min']);
 }).help = 'Keeps watching for changes in sass (trigger sass).';
 
 
 gulp.task('dist', function () {
   runSequence(
     'clean',
-    ['sass-min'],
+    ['sass', 'sass-min'],
     function () {
       gulp.src('').pipe(notify({
         title: 'Dist',
@@ -68,7 +70,7 @@ gulp.task('dist', function () {
 gulp.task('default', function () {
   runSequence(
     'clean',
-    ['sass'], ['watch'],
+    ['sass', 'sass-min'], ['watch'],
     function () {
       gulp.src('').pipe(notify({
         title: 'Development',
