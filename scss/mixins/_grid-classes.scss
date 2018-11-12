@@ -6,6 +6,10 @@
     $prefix: $gl-prefix + '-' + $mq;
   }
 
+  .#{$prefix} {
+    display: grid;
+  }
+
   .#{$prefix}-col-full {
     grid-column: 1 / -1 !important;
   }
@@ -58,6 +62,10 @@
     .#{$prefix}-row-end-#{$i} {
       grid-row-end: $i !important;
     }
+
+    .#{$prefix}-gap-#{$i} {
+      grid-gap: $i * $base-gap !important;
+    }
     
     .#{$prefix}-col-gap-#{$i} {
       grid-column-gap: $i * $base-gap !important;
@@ -66,5 +74,23 @@
     .#{$prefix}-row-gap-#{$i} {
       grid-row-gap: $i * $base-gap !important;
     }
+  }
+
+  @each $alignment in $aligns {
+    .#{$prefix}-align-#{$alignment} {
+      align-items: $alignment !important;
+    }
+
+    .#{$prefix}-justify-#{$alignment} {
+      justify-content: $alignment !important;
+    }
+  }
+
+  .#{$prefix}-justify-between {
+    justify-content: space-between !important;
+  }
+
+  .#{$prefix}-justify-around {
+    justify-content: space-around !important;
   }
 }
