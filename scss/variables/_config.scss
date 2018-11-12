@@ -10,8 +10,14 @@ $laptop-min: 1024px !default;
 $laptop-max: 1439px !default;
 $xl: 1400px !default;
 
+$media-xs: screen and (max-width: $xs);
+$media-md: screen and (min-width: $phone-min) and (max-width: $phone-max);
 $media-phone: screen and (max-width: $phone-max);
+$media-tablet: screen and (min-width: $tablet-min) and (max-width: $tablet-max);
 $media-mobile: screen and (max-width: $tablet-max);
+$media-laptop: screen and (min-width: $laptop-min) and (max-width: $laptop-max);
 $media-desktop: screen and (min-width: $laptop-min);
+$media-xl: screen and (min-width: $xl);
 
-$base-gap: 10px !default;
+
+$base-gap: 5px !default;

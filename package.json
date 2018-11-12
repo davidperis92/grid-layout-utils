@@ -1,6 +1,6 @@
 {
   "name": "grid-layout-utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Utility classes for css grid",
   "repository": {
     "url": "https://github.com/davidperis92/grid-layout-utils.git"
@@ -20,12 +20,17 @@
   "author": "David Peris Martinez (davidperis92)",
   "license": "MIT",
   "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
     "del": "^3.0.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-notify": "^3.2.0",
     "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
-    "run-sequence": "^2.2.1"
-  }
+    "gulp-sass": "^4.0.2"
+  },
+  "files": [
+    "/scss",
+    "/dist"
+  ]
 }

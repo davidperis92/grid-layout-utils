@@ -1,0 +1,24 @@
+// $type: cols | rows
+@mixin auto-fit($type: cols, $min: 0, $max: 1fr) {
+  $auto-fit: repeat(auto-fit, minmax($min, $max));
+
+  @if $type == cols {
+    grid-template-columns: $auto-fit;
+  }
+  @else {
+    grid-template-rows: $auto-fit;
+  }
+}
+
+
+// $type: cols | rows
+@mixin auto-fill($type: cols, $min: 0, $max: 1fr) {
+  $auto-fill: repeat(auto-fill, minmax($min, $max));
+
+  @if $type == cols {
+    grid-template-columns: $auto-fill;
+  }
+  @else {
+    grid-template-rows: $auto-fill;
+  }
+}

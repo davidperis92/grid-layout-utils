@@ -1,13 +1,11 @@
-@include grid-classes();
+@include grid-classes(); // classes without media query
 
-@media #{$media-phone} {
-  @include grid-classes('phone');
-}
+$medias: $media-xs, $media-md, $media-phone, $media-tablet, $media-mobile, $media-laptop, $media-desktop, $media-xl;
+$prefixes: 'xs', 'md', 'phone', 'tablet', 'mobile', 'laptop', 'desktop', 'xl';
 
-@media #{$media-mobile} {
-  @include grid-classes('mobile');
-}
-
-@media #{$media-desktop} {
-  @include grid-classes('desktop');
+@each $media in $medias {
+  $index: index($medias, $media);
+  @media #{$media} {
+    @include grid-classes(nth($prefixes, $index));
+  }
 }

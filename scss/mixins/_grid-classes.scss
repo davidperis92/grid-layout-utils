@@ -1,5 +1,5 @@
 
-
+// if $mq = false it not uses media queries
 @mixin grid-classes($mq: false) {
   $prefix: $gl-prefix;
   @if $mq {
