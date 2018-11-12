@@ -1,6 +1,6 @@
 {
   "name": "grid-layout-utils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Utility classes for css grid",
   "repository": {
     "url": "https://github.com/davidperis92/grid-layout-utils.git"
